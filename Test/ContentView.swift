@@ -26,50 +26,62 @@ struct ContentView: View {
     @State private var user: String = ""
     @State private var password: String = ""
     
+    let textFieldColor = Color(red: 0.9, green: 0.9, blue: 0.9)
+    
     var body: some View {
-       
-        
         NavigationView{
         
             VStack{
-                Image("bus")
+                Image("Image")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
                     .clipped()
                     .cornerRadius(30)
                     .padding(.bottom, 25)
+                    .padding(.top, 125)
+                
+                
                 Text("Tutoring App Name")
-                    .padding(.bottom, 75)
+                    .fontWeight(.bold)
+                    .font(.system(size:30))
+
+                    
                 
                 HStack {
-                    Text("Username")
-                    TextField("", text: $user)
-                        .border(Color(UIColor.separator))
+                    TextField("Username", text: $user)
+                        .padding()
+                        .background(textFieldColor)
+                        .cornerRadius(15)
+                        .font(Font.system(size: 20))
                 }
                 .padding(10)
 
                 HStack {
-                    Text("Password")
                     SecureField("Password", text: $password)
-                        .border(Color(UIColor.separator))
-                        
+                        .padding()
+                        .background(textFieldColor)
+                        .cornerRadius(15)
+                        .font(Font.system(size: 20))
                 }
                 .padding(10)
                 
                 HStack {
-//                    NavigationLink(destination: MainView()){
-//                      Text("Sign In")
-//                    }
-//                        .navigationBarHidden(true)
-//                        .navigationBarBackButtonHidden(true)
-                    
-                    
+                    Spacer()
+                    NavigationLink(destination: AppView()){
+                      Text("Sign In")
+                    }
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
+                    Spacer()
                     
                     Button("Sign Up", action: {
                       print("Hello")
                     })
-                        .padding(.horizontal, 50)
+                        .colorInvert()
+                    
+                    Spacer()
+                       
                 }
                 .padding(.top, 100)
                 .padding(.bottom, 200)
@@ -214,6 +226,13 @@ struct HomeView: View {
     @State private var showHomeScreen = true
     @State private var showClassScreen = false
     
+    @State private var showMeetingView = false
+    @State var testMeeting = meeting(
+            name: "Diego",
+            date: Date(),
+            location: "Select Location",
+            tutor: "Select Tutor"
+        )
    
     @State private var user: String = ""
     let names = ["Bob", "Joe", "Bill", "Sam"]
@@ -333,29 +352,33 @@ struct HomeView: View {
                                         .offset(x:20)
                                         .font(.system(size:30))
                                     
+                                    
                                     Button(action: {
+                                        self.showMeetingView.toggle()
                                     }) {
                                         Image(systemName: "plus")
+                                    
+                                            
                                     }
+                                        .fullScreenCover(isPresented: $showMeetingView){
+                                            ModifyMeetingView(meetings: $testMeeting, startingDate: testMeeting.date)
+                                        }
                                         .padding(.horizontal, 30)
                                     
                                     
                                     Spacer()
                                 }
                                 
-                                //Meetings List
+                                //Meetings Listz
                                 ScrollView{
                                                                    
                                     scheduledMeetingView()
-                                    
                                     scheduledMeetingView()
                                     scheduledMeetingView()
                                     scheduledMeetingView()
-                                    
                                     scheduledMeetingView()
                                     scheduledMeetingView()
                                     scheduledMeetingView()
-                                    
                                     scheduledMeetingView()
                                     scheduledMeetingView()
                                 }
@@ -368,6 +391,9 @@ struct HomeView: View {
             
     }
 }
+
+let tutors = ["John", "Hanna", "Edward", "Superman"]
+
 
 struct ProfileView: View {
     @State private var isShowingPhotoPicker = false
@@ -409,17 +435,12 @@ struct ProfileView: View {
 struct scheduledMeetingView: View {
     
     @State private var showMeetingView = false
-    
-    
-    
     @State var testMeeting = meeting(
             name: "Diego",
             date: Date(),
-            location: "San Jose"
+            location: "San Jose",
+            tutor: "George"
         )
-    
-    
-    
     let formatter = DateFormatter()
     
     
@@ -428,9 +449,10 @@ struct scheduledMeetingView: View {
             HStack{
                 VStack{
                     HStack{
-                        Text("Bobby")
+                        Text(testMeeting.name)
                         Divider()
-                        Text("Chemistry")
+                        Text(testMeeting.tutor)
+    
                         Divider()
                 
                         //formatter.dateStyle = .short
@@ -451,9 +473,7 @@ struct scheduledMeetingView: View {
                     .padding(.bottom, 10)
                     
                 }
-                
-                
-                
+
                 Divider()
                 Button(action: {
                     self.showMeetingView.toggle()
@@ -483,9 +503,14 @@ struct meeting {
     var name : String
     var date : Date
     var location: String
+    var tutor : String
     
-    mutating func change(date : Date){
+    mutating func setDate(date : Date){
         self.date = date
+    }
+    
+    mutating func setTutor(tutor : String){
+        self.tutor = tutor
     }
     
 }
@@ -536,7 +561,30 @@ struct ModifyMeetingView: View{
                Spacer()
                Text(meetings.name)
                Text(meetings.location)
-                   .onAppear(perform: {print("gergeg")})
+               
+               Menu(meetings.tutor){
+                   Button("Hulk"){
+                       meetings.setTutor(tutor: "Hulk")
+                   }
+                   Button("Superman"){
+                       meetings.setTutor(tutor: "Superman")
+                   }
+                   Button("Captain America"){
+                       meetings.setTutor(tutor: "Captain America")
+                   }
+                   Button("Spiderman"){
+                       meetings.setTutor(tutor: "Spiderman")
+                   }
+                   Button("Flash"){
+                       meetings.setTutor(tutor: "Flash")
+                   }
+                   
+               }
+               
+               
+              
+               
+               
                DatePicker("Meeting Date/Time",selection: $meetings.date, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                    .padding(.horizontal, 10)
 //               TextField("Add meeting notes here", text: $notes)
@@ -553,7 +601,7 @@ struct ModifyMeetingView: View{
          
       }
     func cancel(){
-        meetings.change(date: startingDate)
+        meetings.setDate(date: startingDate)
         presentationMode.wrappedValue.dismiss()
     }
     
