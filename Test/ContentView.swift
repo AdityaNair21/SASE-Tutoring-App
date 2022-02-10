@@ -350,6 +350,14 @@ struct HomeView: View {
                                     
                                     scheduledMeetingView()
                                     scheduledMeetingView()
+                                    scheduledMeetingView()
+                                    
+                                    scheduledMeetingView()
+                                    scheduledMeetingView()
+                                    scheduledMeetingView()
+                                    
+                                    scheduledMeetingView()
+                                    scheduledMeetingView()
                                 }
 
                 
@@ -410,6 +418,8 @@ struct scheduledMeetingView: View {
             location: "San Jose"
         )
     
+    
+    
     let formatter = DateFormatter()
     
     
@@ -453,7 +463,7 @@ struct scheduledMeetingView: View {
                         .frame(width: 25, height: 25)
                 }
                     .fullScreenCover(isPresented: $showMeetingView){
-                        ModifyMeetingView(meetings: $testMeeting)
+                        ModifyMeetingView(meetings: $testMeeting, startingDate: testMeeting.date)
                     }
                     .padding(.trailing, 10)
             }
@@ -462,8 +472,9 @@ struct scheduledMeetingView: View {
             
             
             Rectangle()
-                .opacity(0.25)
-                .cornerRadius(25)
+                .opacity(0.30)
+                .cornerRadius(20)
+                .foregroundColor(Color.gray)
         }
     }
 }
@@ -472,6 +483,11 @@ struct meeting {
     var name : String
     var date : Date
     var location: String
+    
+    mutating func change(date : Date){
+        self.date = date
+    }
+    
 }
 
 struct ClassView: View {
@@ -497,35 +513,31 @@ struct ClassView: View {
 
 struct ModifyMeetingView: View{
     @Binding var meetings: meeting
-    
-    let startingDate: Date = Date()
+    var startingDate: Date
+    let newDate: Date = Date()
     @State private var notes: String = ""
+        
     @Environment(\.presentationMode) var presentationMode
-    
-//
-//    let dateRange: PartialRangeFrom<Date> = {
-//        let calendar = Calendar.current
-//        return Date()...
-//
-//    }()
-//
-   
-    
-    
       var body: some View {
            VStack {
                HStack{
-                   Button("Done"){
-                       presentationMode.wrappedValue.dismiss()
+                   Button("Cancel"){
+                       cancel()
                    }
                    .padding(.leading, 20)
                    Spacer()
+                   
+                   Button("Done"){
+                       done()
+                   }
+                   .padding(.trailing, 20)
                }
                
                Spacer()
                Text(meetings.name)
                Text(meetings.location)
-               DatePicker("Meeting Date/Time",selection: $meetings.date, in: startingDate..., displayedComponents: [.date, .hourAndMinute])
+                   .onAppear(perform: {print("gergeg")})
+               DatePicker("Meeting Date/Time",selection: $meetings.date, in: Date()..., displayedComponents: [.date, .hourAndMinute])
                    .padding(.horizontal, 10)
 //               TextField("Add meeting notes here", text: $notes)
 //                   .border(.black, width: 1)
@@ -537,8 +549,16 @@ struct ModifyMeetingView: View{
                    .frame(maxWidth: 350, minHeight: 200, idealHeight: 350, maxHeight: 350)
                    .padding(.vertical, 25)
                    .cornerRadius(10)
-
-       }
+           }
+         
+      }
+    func cancel(){
+        meetings.change(date: startingDate)
+        presentationMode.wrappedValue.dismiss()
+    }
+    
+    func done(){
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
