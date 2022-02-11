@@ -186,7 +186,7 @@ struct AppView: View {
                     }
                     Spacer()
                 }
-                .padding(.vertical, 5)
+                .offset(x: 0, y: 15)
                 
                 
             }
@@ -483,7 +483,7 @@ struct scheduledMeetingView: View {
                         .frame(width: 25, height: 25)
                 }
                     .fullScreenCover(isPresented: $showMeetingView){
-                        ModifyMeetingView(meetings: $testMeeting, startingDate: testMeeting.date)
+                        ModifyMeetingView(meetings: $testMeeting, startingDate: testMeeting.date, startingTutor: testMeeting.tutor)
                     }
                     .padding(.trailing, 10)
             }
@@ -538,8 +538,10 @@ struct ClassView: View {
 
 struct ModifyMeetingView: View{
     @Binding var meetings: meeting
-    var startingDate: Date
+    @State var startingDate: Date
     let newDate: Date = Date()
+    @State var startingTutor: String = ""
+    
     @State private var notes: String = ""
         
     @Environment(\.presentationMode) var presentationMode
@@ -564,18 +566,22 @@ struct ModifyMeetingView: View{
                
                Menu(meetings.tutor){
                    Button("Hulk"){
-                       meetings.setTutor(tutor: "Hulk")
+                       
                    }
                    Button("Superman"){
+                       startingTutor = meetings.tutor
                        meetings.setTutor(tutor: "Superman")
                    }
                    Button("Captain America"){
+                       startingTutor = meetings.tutor
                        meetings.setTutor(tutor: "Captain America")
                    }
                    Button("Spiderman"){
+                       startingTutor = meetings.tutor
                        meetings.setTutor(tutor: "Spiderman")
                    }
                    Button("Flash"){
+                       startingTutor = meetings.tutor
                        meetings.setTutor(tutor: "Flash")
                    }
                    
@@ -602,11 +608,14 @@ struct ModifyMeetingView: View{
       }
     func cancel(){
         meetings.setDate(date: startingDate)
+        meetings.setTutor(tutor: startingTutor)
         presentationMode.wrappedValue.dismiss()
     }
     
     func done(){
+
         presentationMode.wrappedValue.dismiss()
+        
     }
 }
 
