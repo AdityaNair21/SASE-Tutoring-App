@@ -621,11 +621,54 @@ struct ModifyMeetingView: View{
 
 struct ChatView: View {
     @State private var user: String = ""
-    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        Text("Hi")
+            NavigationView{
+                VStack{
+                        HStack{
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }) {
+                                Image(systemName: "chevron.left")
+                            }
+                            
+                            Spacer()
+                            Text("Messages").fontWeight(.bold)
+                                .font(.system(size:30))
+                            Spacer()
+                            Button(action: {
+                            }) {
+                                Image(systemName: "square.and.pencil")
+                            }
+                            
+                        }.padding()
+            
+                    
+                    ScrollView{
+                    ForEach(0..<10, id: \.self){ num in
+                        VStack{
+                            HStack{
+                                Image(systemName: "person.fill").font(.system(size: 33))
+                                    .padding()
+                                    .overlay(RoundedRectangle(cornerRadius: 44).stroke(Color.black, lineWidth: 1))
+                                VStack(alignment: .leading){
+                                    Text("Username").font(.system(size: 16, weight: .semibold))
+                                    Text("Message sent to user").font(.system(size: 14)).foregroundColor(Color(.lightGray))
+                                }
+                                Spacer()
+                                Text("2d").font(.system(size: 12, weight: .semibold))
+                                
+                
+                            }
+                            Divider()
+                                .padding(.vertical, 8)
+                        }.padding(.horizontal)
+                    }
+                    }
+                }
+            }.navigationBarHidden(true)
+            
     }
     
+
 }
-
-
