@@ -15,6 +15,9 @@
 		21198FBB27A3B91800C815E6 /* TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198FBA27A3B91800C815E6 /* TestUITestsLaunchTests.swift */; };
 		2122A61B27A532C400637C12 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2122A61A27A532C400637C12 /* PhotoPicker.swift */; };
 		2122A61C27A743FF00637C12 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198FAE27A3B91800C815E6 /* TestTests.swift */; };
+		2C533C0F27C83D06009DAB1E /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C0E27C83D06009DAB1E /* Messages.swift */; };
+		2C533C1127C84196009DAB1E /* ChatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C1027C84196009DAB1E /* ChatsModel.swift */; };
+		2C533C1527C88C6B009DAB1E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C1427C88C6B009DAB1E /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		21198FB827A3B91800C815E6 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		21198FBA27A3B91800C815E6 /* TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2122A61A27A532C400637C12 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		2C533C0E27C83D06009DAB1E /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		2C533C1027C84196009DAB1E /* ChatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsModel.swift; sourceTree = "<group>"; };
+		2C533C1427C88C6B009DAB1E /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				21198FA127A3B91700C815E6 /* Assets.xcassets */,
 				21198FA327A3B91700C815E6 /* Preview Content */,
 				2122A61A27A532C400637C12 /* PhotoPicker.swift */,
+				2C533C0E27C83D06009DAB1E /* Messages.swift */,
+				2C533C1027C84196009DAB1E /* ChatsModel.swift */,
+				2C533C1427C88C6B009DAB1E /* DateHelper.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -253,8 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21198FA027A3B91700C815E6 /* ContentView.swift in Sources */,
+				2C533C0F27C83D06009DAB1E /* Messages.swift in Sources */,
 				21198F9E27A3B91700C815E6 /* TestApp.swift in Sources */,
+				2C533C1527C88C6B009DAB1E /* DateHelper.swift in Sources */,
 				2122A61B27A532C400637C12 /* PhotoPicker.swift in Sources */,
+				2C533C1127C84196009DAB1E /* ChatsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

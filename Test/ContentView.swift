@@ -644,34 +644,25 @@ struct ChatView: View {
         }.padding()
     }
     var body: some View {
+        let chats = Chat.sampleChat
         NavigationView{
-            VStack{
-                customNavBar
-                ScrollView{
-                    ForEach(0..<10, id: \.self){ num in
-                        VStack{
-                            HStack{
-                                Image(systemName: "person.fill").font(.system(size: 33))
-                                    .padding()
-                                    .overlay(RoundedRectangle(cornerRadius: 44).stroke(Color.black, lineWidth: 1))
-                                VStack(alignment: .leading){
-                                    Text("Username").font(.system(size: 16, weight: .semibold))
-                                    Text("Message sent to user").font(.system(size: 14)).foregroundColor(Color(.lightGray))
-                                }
-                                Spacer()
-                                Text("2d").font(.system(size: 12, weight: .semibold))
-                                
-                                
-                            }
-                            Divider()
-                                .padding(.vertical, 8)
-                        }.padding(.horizontal)
-                    }
+            List {
+                ForEach(chats){ chat in
+                    Messages(chat: chat)
                 }
             }
-        }.navigationBarHidden(true)
+            .listStyle(PlainListStyle())
+            .navigationTitle("Messages")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+            },trailing: Button(action: {}){
+                Image(systemName: "square.and.pencil")
+            })
+        }.navigationBarBackButtonHidden(true)
         
     }
-    
-    
 }
+
