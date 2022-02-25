@@ -543,7 +543,6 @@ struct ModifyMeetingView: View{
     @State var startingTutor: String = ""
     
     @State private var notes: String = ""
-    
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack {
@@ -621,37 +620,31 @@ struct ModifyMeetingView: View{
 
 
 
-struct ChatView: View {
-    @State private var user: String = ""
+struct ChatView: View{
+    @State var viewModel = ChatsViewModel()
+    @State private var query =  ""
     @Environment(\.presentationMode) var presentationMode
-    private var customNavBar : some View{
-        HStack{
-            Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "chevron.left")
-            }
-            
-            Spacer()
-            Text("Messages").fontWeight(.bold)
-                .font(.system(size:30))
-            Spacer()
-            Button(action: {
-            }) {
-                Image(systemName: "square.and.pencil")
-            }
-            
-        }.padding()
-    }
+    
     var body: some View {
-        let chats = Chat.sampleChat
         NavigationView{
             List {
-                ForEach(chats){ chat in
-                    Messages(chat: chat)
+                ForEach(viewModel.getSortedFilteredCharts(query: query)){ chat in
+                    ZStack{
+                        Messages(chat: chat)
+                        NavigationLink(destination: { MessageView(chat: chat)
+                                .environmentObject(viewModel)
+                        }) {
+                            EmptyView()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .frame(width: 0)
+                        .opacity(0)
+                    }
+                    
                 }
             }
             .listStyle(PlainListStyle())
+            .searchable(text: $query)
             .navigationTitle("Messages")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: Button(action: {

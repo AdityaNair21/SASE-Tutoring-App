@@ -18,6 +18,8 @@
 		2C533C0F27C83D06009DAB1E /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C0E27C83D06009DAB1E /* Messages.swift */; };
 		2C533C1127C84196009DAB1E /* ChatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C1027C84196009DAB1E /* ChatsModel.swift */; };
 		2C533C1527C88C6B009DAB1E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C1427C88C6B009DAB1E /* DateHelper.swift */; };
+		2C533C1727C97656009DAB1E /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C1627C97656009DAB1E /* ChatsViewModel.swift */; };
+		2C533C1B27C987E4009DAB1E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C533C1A27C987E4009DAB1E /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		2C533C0E27C83D06009DAB1E /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2C533C1027C84196009DAB1E /* ChatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsModel.swift; sourceTree = "<group>"; };
 		2C533C1427C88C6B009DAB1E /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		2C533C1627C97656009DAB1E /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
+		2C533C1A27C987E4009DAB1E /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				2C533C0E27C83D06009DAB1E /* Messages.swift */,
 				2C533C1027C84196009DAB1E /* ChatsModel.swift */,
 				2C533C1427C88C6B009DAB1E /* DateHelper.swift */,
+				2C533C1627C97656009DAB1E /* ChatsViewModel.swift */,
+				2C533C1A27C987E4009DAB1E /* MessageView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -265,8 +271,10 @@
 				2C533C0F27C83D06009DAB1E /* Messages.swift in Sources */,
 				21198F9E27A3B91700C815E6 /* TestApp.swift in Sources */,
 				2C533C1527C88C6B009DAB1E /* DateHelper.swift in Sources */,
+				2C533C1B27C987E4009DAB1E /* MessageView.swift in Sources */,
 				2122A61B27A532C400637C12 /* PhotoPicker.swift in Sources */,
 				2C533C1127C84196009DAB1E /* ChatsModel.swift in Sources */,
+				2C533C1727C97656009DAB1E /* ChatsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
