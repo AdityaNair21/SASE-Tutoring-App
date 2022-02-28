@@ -11,6 +11,9 @@ struct MessageView: View {
     @EnvironmentObject var viewModel: ChatsViewModel
     let chat: Chat
     
+    @State private var text = ""
+    @FocusState private var isFocused
+    
     var body: some View {
         VStack(spacing: 0){
             GeometryReader {reader in
@@ -20,22 +23,26 @@ struct MessageView: View {
                     //.toolBarView()
                 
             }
+            toolBarView()
         }
         .padding(.top, 1)
         .navigationBarTitleDisplayMode(.inline)
-        //.onAppear {
             
     }
     
-    /*func toolBarView() -> some View {
+    func toolBarView() -> some View {
         VStack {
-            Text("Toolbar")
+            let height: CGFloat = 37
+            HStack{
+                TextField("Message...", text: $text)
+            }
+            
         }
         .padding(.vertical)
         .padding(.horizontal)
         .background(.thickMaterial)
     }
-     */
+    
     
     let columns = [GridItem(.flexible(minimum: 10))]
     func getMessagesView(viewWidth: CGFloat) -> some View {

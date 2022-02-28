@@ -41,7 +41,7 @@ extension Chat {
     static let sampleChat = [
         Chat(person: Person(name: "John", imgString: "pfp"), messages: [
             Message("Hi I need help with my homework. Can you help me?", type: .sent, date: Date(timeIntervalSinceNow: -86400*3)),
-            Message("Hey, sure what do you need help on?", type: .sent, date: Date(timeIntervalSinceNow: -86400*0))
+            Message("Hey, sure what do you need help on?", type: .received, date: Date(timeIntervalSinceNow: -86400*0))
         ], hasUnReadMessage: true),
         Chat(person: Person(name: "Sam", imgString: "pfp"), messages: [
             Message("Hi I need help with my homework. Can you help me?", type: .sent, date: Date(timeIntervalSinceNow: -86400*3)),
