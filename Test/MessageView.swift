@@ -35,14 +35,29 @@ struct MessageView: View {
             let height: CGFloat = 37
             HStack{
                 TextField("Message...", text: $text)
+                    .frame(height: height)
+                    .background(Color.white)
+                //can use clipShape & Rounded Rectangle command
+                    .cornerRadius(13)
+                    .focused($isFocused)
+                    //.padding(.horizontal)
+                //Spacer()
+                Button(action: {}){
+                    Image(systemName: "paperplane.fill")
+                }
+                .disabled(text.isEmpty)
             }
-            
+            .frame(height: height)
         }
         .padding(.vertical)
         .padding(.horizontal)
         .background(.thickMaterial)
     }
     
+    func sendMessage(){
+        //if let message = viewModel.sendMessage(text, in:  chat) {
+            text = ""
+        }
     
     let columns = [GridItem(.flexible(minimum: 10))]
     func getMessagesView(viewWidth: CGFloat) -> some View {
@@ -75,3 +90,4 @@ struct MessageView_Previews: PreviewProvider {
             .environmentObject(ChatsViewModel())
     }
 }
+
