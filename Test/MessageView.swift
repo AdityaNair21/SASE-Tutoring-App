@@ -49,6 +49,7 @@ struct MessageView: View {
                 }
             }
         }
+    
     func toolBarView() -> some View {
         VStack {
             let height: CGFloat = 37
@@ -63,7 +64,6 @@ struct MessageView: View {
                 //Spacer()
                 Button(action: sendMessage){
                     Image(systemName: "paperplane.fill")
-                    
                 }
                 .disabled(text.isEmpty)
             }
@@ -101,7 +101,7 @@ struct MessageView: View {
                     
                 }
                 .frame(maxWidth: .infinity, alignment: isReceived ? .leading: .trailing)
-                .id(message.id) //
+                .id(message.id)
             }
         }
     }
