@@ -14,22 +14,41 @@ struct MessageView: View {
     @State private var text = ""
     @FocusState private var isFocused
     
+    @State private var messageIDToScroll: UUID?
+    
     var body: some View {
         VStack(spacing: 0){
             GeometryReader {reader in
                 ScrollView{
-                    getMessagesView(viewWidth: reader.size.width)
-                }.padding(.horizontal)
-                    //.toolBarView()
-                
+                    ScrollViewReader{ scrollReader in
+                        getMessagesView(viewWidth: reader.size.width)
+                            .padding(.horizontal)
+                            .onChange(of: messageIDToScroll){ _ in
+                                if let messageID = messageIDToScroll{
+                                    scrollTo(messageID: messageID, shouldAnnimate: true, scrollReader: scrollReader)
+
+                                }
+                            }
+                    }
+                }
             }
             toolBarView()
         }
         .padding(.top, 1)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear{
+            viewModel.markAsUnread(false, chat: chat)
+        }
             
     }
     
+    func scrollTo(messageID: UUID, anchor: UnitPoint? = nil, shouldAnnimate: Bool, scrollReader: ScrollViewProxy){
+            DispatchQueue.main.async {
+                withAnimation(shouldAnnimate ? Animation.easeIn: nil){
+                    scrollReader.scrollTo(messageID, anchor: anchor)
+                }
+            }
+        }
     func toolBarView() -> some View {
         VStack {
             let height: CGFloat = 37
@@ -42,8 +61,9 @@ struct MessageView: View {
                     .focused($isFocused)
                     //.padding(.horizontal)
                 //Spacer()
-                Button(action: {}){
+                Button(action: sendMessage){
                     Image(systemName: "paperplane.fill")
+                    
                 }
                 .disabled(text.isEmpty)
             }
@@ -55,9 +75,12 @@ struct MessageView: View {
     }
     
     func sendMessage(){
-        //if let message = viewModel.sendMessage(text, in:  chat) {
+        if let message = viewModel.sendMessage(text, in: chat){
             text = ""
+            messageIDToScroll = message.id
+
         }
+    }
     
     let columns = [GridItem(.flexible(minimum: 10))]
     func getMessagesView(viewWidth: CGFloat) -> some View {

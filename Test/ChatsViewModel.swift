@@ -22,6 +22,12 @@ class ChatsViewModel: ObservableObject{
         return sortedChats.filter{$0.person.name.lowercased().contains(query.lowercased())}
     }
     
+    func markAsUnread(_ newValue: Bool, chat: Chat){
+        if let index = chats.firstIndex(where: {$0.id == chat.id}){
+            chats[index].hasUnReadMessage = newValue
+        }
+    }
+    
     func sendMessage(_ text: String, in chat: Chat) -> Message?{
         if let index = chats.firstIndex(where: {$0.id == chat.id}) {
             let message = Message(text, type: .sent)
