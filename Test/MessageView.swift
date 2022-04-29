@@ -38,6 +38,7 @@ struct MessageView: View {
         }
         .padding(.top, 1)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Text(chat.person.name))
         .onAppear{
             viewModel.markAsUnread(false, chat: chat)
         }
