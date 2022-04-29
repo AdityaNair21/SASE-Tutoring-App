@@ -14,6 +14,10 @@ struct SignUpView: View {
     @State private var password: String = ""
     @State private var confirmPassword: String = ""
     
+    @State private var Tutor:Bool = false
+    @State private var Tutee:Bool = false
+    
+    
     let textFieldColor = Color(red: 0.9, green: 0.9, blue: 0.9)
     
     var body: some View {
@@ -72,33 +76,62 @@ struct SignUpView: View {
             Text("Choose what you would like to be")
                 .padding()
             HStack{
+                Spacer()
                 Button(action: {
                     print("Round Action")
+                    Tutor.toggle()
                 }) {
-                    Text("Tutor")
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(Color.black)
-                        .background(Color.blue)
-                        .clipShape(Circle())
+                    
+                    ZStack{
+                        
+                        Circle()
+                            .frame(width: 110, height: 110)
+                            .foregroundColor(Tutor ? Color.blue : Color.clear)
+                        
+                        Text("Tutor")
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(Tutor ? Color.black : Color.white)
+                            .background(Color.orange)
+                            .font(.system(size:25))
+//                            .opacity(Tutor ? 0.5 : 1)
+                            .clipShape(Circle())
+                        
+                    }
                 }
+                Spacer()
                 Button(action: {
                     print("Round Action")
+                    Tutee.toggle()
                 }) {
-                    Text("Tutee")
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(Color.black)
-                        .background(Color.yellow)
-                        .clipShape(Circle())
+                    ZStack{
+                        
+                        Circle()
+                            .frame(width: 110, height: 110)
+                            .foregroundColor(Tutee ? Color.blue : Color.clear)
+                        
+                        Text("Tutee")
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(Tutee ? Color.black : Color.white)
+                            .background(Color.green)
+                            .font(.system(size:25))
+//                            .opacity(Tutee ? 0.5 : 1)
+                            .clipShape(Circle())
+                        
+                        
+                    }
+                    
+                    
                 }
-                Button(action: {
-                    print("Round Action")
-                }) {
-                    Text("Both")
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(Color.black)
-                        .background(Color.green)
-                        .clipShape(Circle())
-                }
+                Spacer()
+//                Button(action: {
+//                    print("Round Action")
+//                }) {
+//                    Text("Both")
+//                        .frame(width: 100, height: 100)
+//                        .foregroundColor(Color.black)
+//                        .background(Color.green)
+//                        .clipShape(Circle())
+//                }
             }
             .padding()
             NavigationLink(destination: AppView()){
