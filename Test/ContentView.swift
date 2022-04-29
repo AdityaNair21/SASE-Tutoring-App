@@ -87,6 +87,10 @@ struct ContentView: View {
                 .padding(.bottom, 200)
             }
         }
+        .navigationBarTitle(Text(""))
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .statusBar(hidden: true)
         .navigationBarBackButtonHidden(true)
     }
 }

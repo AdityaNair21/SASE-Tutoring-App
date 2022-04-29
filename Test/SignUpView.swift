@@ -113,20 +113,25 @@ struct SignUpView: View {
             HStack{
                 Text("Already have an account?")
                     .font(.system(size: 17))
-                Button(action: {
-                    print("go back to Log-In Screen")
-                }){
+                //GOES BACK TO LOG-IN SCREEN
+                NavigationLink(destination: ContentView()){
                     Text("Sign In!")
                         .font(.system(size: 17, weight: .bold))
                 }
             }
-            //GOES BACK TO LOG-IN SCREEN self.mode.wrappedValue.dismiss()
+            //self.mode.wrappedValue.dismiss()
         }
         .padding()
         //.offset(x: 0, y: 0)
+        .navigationBarTitle(Text(""))
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .statusBar(hidden: true)
         .navigationBarBackButtonHidden(true)
     }
+        //.navigationBarBackButtonHidden(true)
 }
+
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
