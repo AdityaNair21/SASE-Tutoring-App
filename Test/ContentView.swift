@@ -275,7 +275,6 @@ struct ChatView: View{
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView{
             List {
                 ForEach(viewModel.getSortedFilteredCharts(query: query)){ chat in
                     ZStack{
@@ -296,14 +295,9 @@ struct ChatView: View{
             .searchable(text: $query)
             .navigationTitle("Messages")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "chevron.left")
-            },trailing: Button(action: {}){
+            .navigationBarItems(trailing: Button(action: {}){
                 Image(systemName: "square.and.pencil")
             })
-        }.navigationBarBackButtonHidden(true)
         
     }
 }
