@@ -71,14 +71,22 @@ struct ContentView: View {
                     NavigationLink(destination: AppView()){
                         Text("Sign In")
                     }
+                    .navigationBarTitle(Text(""))
+                    .navigationTitle("")
                     .navigationBarHidden(true)
+                    .statusBar(hidden: true)
                     .navigationBarBackButtonHidden(true)
                     Spacer()
                     
                     NavigationLink(destination: SignUpView()){
                         Text("Sign Up")
                     }
-                        .colorInvert()
+                    .navigationBarTitle(Text(""))
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
+                    .statusBar(hidden: true)
+                    .navigationBarBackButtonHidden(true)
+                    .colorInvert()
                     
                     Spacer()
                     
@@ -136,7 +144,10 @@ struct AppView: View {
                             .frame(width: 30, height: 30)
                     }
                     .padding(.horizontal, 20)
+                    .navigationBarTitle(Text(""))
+                    .navigationTitle("")
                     .navigationBarHidden(true)
+                    .statusBar(hidden: true)
                     .navigationBarBackButtonHidden(true)
                     
                     
@@ -152,6 +163,11 @@ struct AppView: View {
                     NavigationLink(destination: ChatView()){
                         Image(systemName: "message.fill")
                     }
+                    .navigationBarTitle(Text(""))
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
+                    .statusBar(hidden: true)
+                    .navigationBarBackButtonHidden(true)
                     .padding(.horizontal, 20)
                 }
                 .padding(.top, 50)
