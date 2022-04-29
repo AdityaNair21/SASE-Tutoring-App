@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Messages: View {
-    
     let chat: Chat
+    @Binding var test: Int
     
     var body: some View {
         HStack{
@@ -44,8 +44,8 @@ struct Messages: View {
     
 }
 
-struct Messages_Previews: PreviewProvider {
-    static var previews: some View {
-        Messages(chat: Chat.sampleChat[0])
-    }
-}
+//struct Messages_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Messages(chat: Chat.sampleChat[0])
+//    }
+//}

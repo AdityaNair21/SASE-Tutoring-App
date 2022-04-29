@@ -17,12 +17,13 @@ struct HomeView: View {
     
     @State private var showMeetingView = false
     @State var testMeeting = meeting(
-        name: "Diego",
+        subject: "Math 32",
         date: Date(),
         location: "Select Location",
-        tutor: "Select Tutor"
+        tutor: "Select Tutor",
+        meetingNotes: ""
     )
-    @State var m = meeting(name: "", date: Date.now, location: "", tutor: "")
+    @State var m = meeting(subject: "", date: Date.now, location: "", tutor: "", meetingNotes: "")
     
     @State private var user: String = ""
     let names = ["Bob", "Joe", "Bill", "Sam"]
@@ -45,7 +46,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a1")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -56,7 +57,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a2")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -66,7 +67,7 @@ struct HomeView: View {
                     
                     NavigationLink(destination: ClassView()){
                         VStack{
-                            Image("pfp")
+                            Image("a3")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -78,7 +79,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a4")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -92,7 +93,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a5")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -103,7 +104,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a6")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -114,7 +115,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a7")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -125,7 +126,7 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("pfp")
+                            Image("a8")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             Text("Math")
@@ -144,9 +145,9 @@ struct HomeView: View {
                     
                     
                     Button(action: {
-                        m = meeting(name: "Roger", date: Date.now, location: "", tutor: "Choose a Tutor")
-                        meetingList.append(m)
+                        m = meeting(subject: "Choose a Subject", date: Date.now, location: "", tutor: "Choose a Tutor", meetingNotes: "")
                         self.showMeetingView.toggle()
+                        meetingList.append(m)
                     }) {
                         Image(systemName: "plus")
                         
@@ -154,7 +155,7 @@ struct HomeView: View {
                     }
                     .fullScreenCover(isPresented: $showMeetingView){
 
-                        ModifyMeetingView(meetings: $m, meetingList: $meetingList, startingDate: m.date)
+                        ModifyMeetingView(meetings: $m, meetingList: $meetingList, startingDate: m.date, startingTutor: m.tutor, startingSubject: m.subject, startingLocation: m.location, startingMeetingNotes: m.meetingNotes)
                     }
                       .padding(.horizontal, 30)
                     

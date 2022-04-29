@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MessageView: View {
     @EnvironmentObject var viewModel: ChatsViewModel
+    
     let chat: Chat
+    @Binding var test : Int
     
     @State private var text = ""
     @FocusState private var isFocused
@@ -62,7 +64,10 @@ struct MessageView: View {
                     .focused($isFocused)
                     //.padding(.horizontal)
                 //Spacer()
-                Button(action: sendMessage){
+                Button(action: {
+                    test = test + 1
+                    sendMessage()
+                }){
                     Image(systemName: "paperplane.fill")
                 }
                 .disabled(text.isEmpty)
@@ -75,10 +80,10 @@ struct MessageView: View {
     }
     
     func sendMessage(){
+        viewModel.refresh = viewModel.refresh + 1
         if let message = viewModel.sendMessage(text, in: chat){
             text = ""
             messageIDToScroll = message.id
-
         }
     }
     
@@ -107,10 +112,11 @@ struct MessageView: View {
     }
 }
 
-struct MessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageView(chat: Chat.sampleChat[0])
-            .environmentObject(ChatsViewModel())
-    }
-}
-
+//struct MessageView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        MessageView(chat: Chat.sampleChat[0])
+//            .environmentObject(ChatsViewModel())
+//    }
+//}
+//

@@ -270,6 +270,7 @@ struct ClassView: View {
 
 struct ChatView: View{
     @State var viewModel = ChatsViewModel()
+    @State var test = 1
     @State private var query =  ""
     @Environment(\.presentationMode) var presentationMode
     
@@ -278,8 +279,8 @@ struct ChatView: View{
             List {
                 ForEach(viewModel.getSortedFilteredCharts(query: query)){ chat in
                     ZStack{
-                        Messages(chat: chat)
-                        NavigationLink(destination: { MessageView(chat: chat)
+                        Messages(chat: chat, test: $test)
+                        NavigationLink(destination: { MessageView(chat: chat, test: $test)
                                 .environmentObject(viewModel)
                         }) {
                             EmptyView()

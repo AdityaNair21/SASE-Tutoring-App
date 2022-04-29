@@ -43,14 +43,14 @@ struct ProfileView: View {
                                 isShowingPhotoPicker = true
                             }
                         
-                        Text("Roger")
+                        Text(userSettings.name)
                             .fontWeight(.bold)
                             .font(.system(size:25))
                             .offset(x: 0, y: 0)
                             .padding(.top, 75)
                         
                         
-                        Text("Tutor/Tutee")
+                        Text(userSettings.role)
                             .font(.system(size:25))
                             .offset(x: 0, y: 0)
                         
@@ -230,7 +230,7 @@ struct ProfileView: View {
                             }
                         }
                         
-                        Text("123-456-7890")
+                        Text(userSettings.phoneNumber)
                             .fontWeight(.bold)
                             .font(.system(size:15))
                             .offset(x: 0, y: -2)
