@@ -10,6 +10,7 @@
 		21166ACB2819178500410A99 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21166ACA2819178500410A99 /* ProfileView.swift */; };
 		21166ACD281917FA00410A99 /* Meetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21166ACC281917FA00410A99 /* Meetings.swift */; };
 		21166ACF2819186E00410A99 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21166ACE2819186E00410A99 /* HomeView.swift */; };
+		21166AD1281A2DD000410A99 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21166AD0281A2DD000410A99 /* UserInfo.swift */; };
 		21198F9E27A3B91700C815E6 /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198F9D27A3B91700C815E6 /* TestApp.swift */; };
 		21198FA027A3B91700C815E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198F9F27A3B91700C815E6 /* ContentView.swift */; };
 		21198FA227A3B91700C815E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21198FA127A3B91700C815E6 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		21166ACA2819178500410A99 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		21166ACC281917FA00410A99 /* Meetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meetings.swift; sourceTree = "<group>"; };
 		21166ACE2819186E00410A99 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		21166AD0281A2DD000410A99 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		21198F9A27A3B91700C815E6 /* SASE Tutoring App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SASE Tutoring App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21198F9D27A3B91700C815E6 /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 		21198F9F27A3B91700C815E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,9 +117,10 @@
 				21198F9F27A3B91700C815E6 /* ContentView.swift */,
 				21198FA127A3B91700C815E6 /* Assets.xcassets */,
 				21198FA327A3B91700C815E6 /* Preview Content */,
-				2122A61A27A532C400637C12 /* PhotoPicker.swift */,
 				2C533C0E27C83D06009DAB1E /* Messages.swift */,
 				2C533C1A27C987E4009DAB1E /* MessageView.swift */,
+				2122A61A27A532C400637C12 /* PhotoPicker.swift */,
+				21166AD0281A2DD000410A99 /* UserInfo.swift */,
 				21166ACA2819178500410A99 /* ProfileView.swift */,
 				2C533C1027C84196009DAB1E /* ChatsModel.swift */,
 				2C533C1427C88C6B009DAB1E /* DateHelper.swift */,
@@ -280,6 +283,7 @@
 				2C533C0F27C83D06009DAB1E /* Messages.swift in Sources */,
 				21166ACB2819178500410A99 /* ProfileView.swift in Sources */,
 				21166ACD281917FA00410A99 /* Meetings.swift in Sources */,
+				21166AD1281A2DD000410A99 /* UserInfo.swift in Sources */,
 				21198F9E27A3B91700C815E6 /* TestApp.swift in Sources */,
 				21166ACF2819186E00410A99 /* HomeView.swift in Sources */,
 				2C533C1527C88C6B009DAB1E /* DateHelper.swift in Sources */,

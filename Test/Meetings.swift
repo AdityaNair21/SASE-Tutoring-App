@@ -8,10 +8,21 @@
 import Foundation
 import SwiftUI
 
+struct ContentView_Previews3: PreviewProvider {
+    static var previews: some View {
+        AppView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
+    }
+    
+}
+
+
 
 struct ModifyMeetingView: View{
     @Binding var meetings: meeting
+    @Binding var meetingList: [meeting]
     @State var startingDate: Date
+    @State private var confirmationShown = false;
     let newDate: Date = Date()
     @State var startingTutor: String = ""
     
@@ -26,6 +37,33 @@ struct ModifyMeetingView: View{
                 .padding(.leading, 20)
                 Spacer()
                 
+                ZStack{
+                    
+                    Rectangle()
+                        .opacity(0.90)
+                        .frame(width: 75, height: 35)
+                        .cornerRadius(10)
+                        .foregroundColor(Color.red)
+                    
+                    Button("Delete"){
+                        confirmationShown.toggle()
+                    }
+                    .foregroundColor(Color.white)
+                    .confirmationDialog(
+                                                "Are you sure you want to delete this schedule?",
+                                                 isPresented: $confirmationShown
+                                            ) {
+                                                Button("Delete") {
+                                                    withAnimation {
+                                                        delete()
+                                                    }
+                                                }
+                                                .foregroundColor(Color.red)
+                                            }
+                }
+                
+                Spacer()
+                
                 Button("Done"){
                     done()
                 }
@@ -34,47 +72,106 @@ struct ModifyMeetingView: View{
             
             Spacer()
             Text(meetings.name)
+            
             Text(meetings.location)
             
-            Menu(meetings.tutor){
-                Button("Hulk"){
-                    
-                }
-                Button("Superman"){
-                    startingTutor = meetings.tutor
-                    meetings.setTutor(tutor: "Superman")
-                }
-                Button("Captain America"){
-                    startingTutor = meetings.tutor
-                    meetings.setTutor(tutor: "Captain America")
-                }
-                Button("Spiderman"){
-                    startingTutor = meetings.tutor
-                    meetings.setTutor(tutor: "Spiderman")
-                }
-                Button("Flash"){
-                    startingTutor = meetings.tutor
-                    meetings.setTutor(tutor: "Flash")
-                }
+            ZStack{
                 
+                Rectangle()
+                    .opacity(0.30)
+                    .cornerRadius(20)
+                    .frame(height: 65)
+                    .foregroundColor(Color.gray.opacity(0.5))
+                    .padding(.horizontal, 10)
+                
+                HStack{
+                    Text("Meeting Location: ")
+                    TextField("Choose a Location", text: $meetings.location)
+                        .frame(width: 150)
+                }
+            }
+            
+            ZStack{
+                
+                Rectangle()
+                    .opacity(0.30)
+                    .cornerRadius(20)
+                    .frame(height: 65)
+                    .foregroundColor(Color.gray.opacity(0.5))
+                    .padding(.horizontal, 10)
+                
+                HStack{
+                    Text("Choose a Tutor: ")
+                    Menu(meetings.tutor){
+                        Button("Hulk"){
+                            
+                        }
+                        Button("Superman"){
+                            startingTutor = meetings.tutor
+                            meetings.setTutor(tutor: "Superman")
+                        }
+                        Button("Captain America"){
+                            startingTutor = meetings.tutor
+                            meetings.setTutor(tutor: "Captain America")
+                        }
+                        Button("Spiderman"){
+                            startingTutor = meetings.tutor
+                            meetings.setTutor(tutor: "Spiderman")
+                        }
+                        Button("Flash"){
+                            startingTutor = meetings.tutor
+                            meetings.setTutor(tutor: "Flash")
+                        }
+                        
+                    }
+                }
             }
             
             
             
             
             
-            DatePicker("Meeting Date/Time",selection: $meetings.date, in: Date()..., displayedComponents: [.date, .hourAndMinute])
-                .padding(.horizontal, 10)
-            //               TextField("Add meeting notes here", text: $notes)
-            //                   .border(.black, width: 1)
-            //                   .frame(minWidth: 250, maxWidth: 300, minHeight: 400, maxHeight: .infinity)
+            ZStack{
+                
+                Rectangle()
+                    .opacity(0.30)
+                    .cornerRadius(20)
+                    .frame(height: 65)
+                    .foregroundColor(Color.gray.opacity(0.5))
+                    .padding(.horizontal, 10)
+                
+                DatePicker("Meeting Date/Time",selection: $meetings.date, in: Date()..., displayedComponents: [.date, .hourAndMinute])
+                    .padding(.horizontal, 25)
+                //               TextField("Add meeting notes here", text: $notes)
+                //                   .border(.black, width: 1)
+                //                   .frame(minWidth: 250, maxWidth: 300, minHeight: 400, maxHeight: .infinity)
+                
+            }
+                
             
+            ZStack{
+                
+                Rectangle()
+                    .opacity(0.30)
+                    .cornerRadius(20)
+                    .frame(height: 425)
+                    .foregroundColor(Color.gray.opacity(0.5))
+                    .padding(.horizontal, 10)
+                
+                VStack{
+                    
+                    Text("Meeting Notes")
+                    
+                    TextEditor(text: $notes)
+                            .frame(maxWidth: 350, minHeight: 200, idealHeight: 350, maxHeight: 350)
+                            .padding(.bottom, 25)
+                            .cornerRadius(10)
+                            .foregroundColor(Color.clear)
+                }
+                
+            }
             
-            TextEditor(text: $notes)
-                .border(.black, width: 1)
-                .frame(maxWidth: 350, minHeight: 200, idealHeight: 350, maxHeight: 350)
-                .padding(.vertical, 25)
-                .cornerRadius(10)
+        
         }
         
     }
@@ -89,14 +186,21 @@ struct ModifyMeetingView: View{
         presentationMode.wrappedValue.dismiss()
         
     }
+    
+    func delete(){
+        meetingList.removeLast()
+        presentationMode.wrappedValue.dismiss()
+        
+    }
 }
 
 
 
 
 struct scheduledMeetingView: View {
-    
+    @Binding var meetingList: [meeting]
     @State private var showMeetingView = false
+    @State var meetingCurrent: meeting
     @State var testMeeting = meeting(
         name: "Diego",
         date: Date(),
@@ -107,19 +211,21 @@ struct scheduledMeetingView: View {
     
     
     var body: some View {
+        
+            
         ZStack{
             HStack{
                 VStack{
                     HStack{
-                        Text(testMeeting.name)
+                        Text(meetingCurrent.name)
                         Divider()
-                        Text(testMeeting.tutor)
+                        Text(meetingCurrent.tutor)
                         
                         Divider()
                         
                         //formatter.dateStyle = .short
                         
-                        Text("Room 2025")
+                        Text(meetingCurrent.location)
                         
                     }
                     .padding(.top, 10)
@@ -128,9 +234,9 @@ struct scheduledMeetingView: View {
                     Divider()
                     
                     HStack{
-                        Text(testMeeting.date, style: .date)
+                        Text(meetingCurrent.date, style: .date)
                         Divider()
-                        Text(testMeeting.date, style: .time)
+                        Text(meetingCurrent.date, style: .time)
                     }
                     .padding(.bottom, 10)
                     
@@ -145,7 +251,7 @@ struct scheduledMeetingView: View {
                         .frame(width: 25, height: 25)
                 }
                 .fullScreenCover(isPresented: $showMeetingView){
-                    ModifyMeetingView(meetings: $testMeeting, startingDate: testMeeting.date, startingTutor: testMeeting.tutor)
+                    ModifyMeetingView(meetings: $meetingCurrent, meetingList: $meetingList, startingDate: meetingCurrent.date, startingTutor: meetingCurrent.tutor)
                 }
                 .padding(.trailing, 10)
             }
@@ -158,10 +264,11 @@ struct scheduledMeetingView: View {
                 .cornerRadius(20)
                 .foregroundColor(Color.gray)
         }
+            
     }
 }
 
-struct meeting {
+struct meeting : Hashable{
     var name : String
     var date : Date
     var location: String
@@ -173,6 +280,10 @@ struct meeting {
     
     mutating func setTutor(tutor : String){
         self.tutor = tutor
+    }
+    
+    mutating func setLocation(location : String){
+        self.location = location
     }
     
 }

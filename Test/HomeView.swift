@@ -13,6 +13,8 @@ struct HomeView: View {
     @State private var showHomeScreen = true
     @State private var showClassScreen = false
     
+    @State var meetingList: [meeting] = []
+    
     @State private var showMeetingView = false
     @State var testMeeting = meeting(
         name: "Diego",
@@ -20,6 +22,7 @@ struct HomeView: View {
         location: "Select Location",
         tutor: "Select Tutor"
     )
+    @State var m = meeting(name: "", date: Date.now, location: "", tutor: "")
     
     @State private var user: String = ""
     let names = ["Bob", "Joe", "Bill", "Sam"]
@@ -141,6 +144,8 @@ struct HomeView: View {
                     
                     
                     Button(action: {
+                        m = meeting(name: "Roger", date: Date.now, location: "", tutor: "Choose a Tutor")
+                        meetingList.append(m)
                         self.showMeetingView.toggle()
                     }) {
                         Image(systemName: "plus")
@@ -148,9 +153,10 @@ struct HomeView: View {
                         
                     }
                     .fullScreenCover(isPresented: $showMeetingView){
-                        ModifyMeetingView(meetings: $testMeeting, startingDate: testMeeting.date)
+
+                        ModifyMeetingView(meetings: $m, meetingList: $meetingList, startingDate: m.date)
                     }
-                    .padding(.horizontal, 30)
+                      .padding(.horizontal, 30)
                     
                     
                     Spacer()
@@ -158,16 +164,9 @@ struct HomeView: View {
                 
                 //Meetings Listz
                 ScrollView{
-                    
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
-                    scheduledMeetingView()
+                    ForEach(meetingList, id: \.self) { meeting in
+                        scheduledMeetingView(meetingList: $meetingList, meetingCurrent: meeting)
+                    }
                 }
                 
                 
@@ -177,4 +176,13 @@ struct HomeView: View {
         
         
     }
+}
+
+
+struct ContentView_Previews4: PreviewProvider {
+    static var previews: some View {
+        AppView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
+    }
+    
 }

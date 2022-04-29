@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ContentView()
             .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
         AppView()
             .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
@@ -92,7 +92,7 @@ struct ContentView: View {
 }
 
 struct AppView: View {
-    
+    @ObservedObject var userSettings = UserSettings()
     @State private var showHomeScreen = true
     @State private var showClassScreen = false
     
