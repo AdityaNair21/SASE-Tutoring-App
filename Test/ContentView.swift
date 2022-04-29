@@ -75,9 +75,9 @@ struct ContentView: View {
                     .navigationBarBackButtonHidden(true)
                     Spacer()
                     
-                    Button("Sign Up", action: {
-                        print("Hello")
-                    })
+                    NavigationLink(destination: SignUpView()){
+                        Text("Sign Up")
+                    }
                         .colorInvert()
                     
                     Spacer()
