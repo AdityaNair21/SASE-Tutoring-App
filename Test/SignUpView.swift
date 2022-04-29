@@ -80,7 +80,7 @@ struct SignUpView: View {
             HStack {
                 Image(systemName: "lock")
                     .foregroundColor(.secondary)
-                TextField("Password", text: $password)
+                SecureField("Password", text: $password)
                     .foregroundColor(Color.black)
             }
             .padding()
@@ -90,7 +90,7 @@ struct SignUpView: View {
             HStack {
                 Image(systemName: "lock")
                     .foregroundColor(.secondary)
-                TextField("Confirm Password", text: $confirmPassword)
+                SecureField("Confirm Password", text: $confirmPassword)
                     .foregroundColor(Color.black)
             }
             .padding()
