@@ -46,46 +46,46 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a1")
+                            Image("1")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("HIST 115")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                     
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a2")
+                            Image("2")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("PHYS 13")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                     
                     NavigationLink(destination: ClassView()){
                         VStack{
-                            Image("a3")
+                            Image("3")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("BIOL 32")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                     .navigationBarHidden(true)
                     
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a4")
+                            Image("4")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("ARTS 3B")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                 }
                 
                 //Course Buttons 2
@@ -93,46 +93,46 @@ struct HomeView: View {
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a5")
+                            Image("5")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("MATH 31")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                     
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a6")
+                            Image("6")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("MUSC 1")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                     
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a7")
+                            Image("7")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("CHEM 7")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                     
                     Button(action: {
                     }) {
                         VStack{
-                            Image("a8")
+                            Image("8")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Text("Math")
+                            Text("ENGL 1A")
                         }
                     }
-                    .padding(.horizontal, 18)
+                    .padding(.horizontal, 15)
                 }
                 Spacer()
                 

@@ -32,7 +32,7 @@ struct ContentView: View {
         NavigationView{
             
             VStack{
-                Image("Image")
+                Image("icon")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 200, height: 200)
