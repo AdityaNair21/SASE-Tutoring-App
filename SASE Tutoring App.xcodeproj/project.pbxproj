@@ -17,6 +17,9 @@
 		21198FA527A3B91700C815E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21198FA427A3B91700C815E6 /* Preview Assets.xcassets */; };
 		21198FB927A3B91800C815E6 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198FB827A3B91800C815E6 /* TestUITests.swift */; };
 		21198FBB27A3B91800C815E6 /* TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198FBA27A3B91800C815E6 /* TestUITestsLaunchTests.swift */; };
+		21220DFB2847152400F9F1DC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21220DFA2847152400F9F1DC /* ChatView.swift */; };
+		21220DFD284715E500F9F1DC /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21220DFC284715E500F9F1DC /* AppView.swift */; };
+		21220DFF2847160E00F9F1DC /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21220DFE2847160E00F9F1DC /* ClassView.swift */; };
 		2122A61B27A532C400637C12 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2122A61A27A532C400637C12 /* PhotoPicker.swift */; };
 		2122A61C27A743FF00637C12 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21198FAE27A3B91800C815E6 /* TestTests.swift */; };
 		2C13824B281B478000B9F2B5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C13824A281B478000B9F2B5 /* SignUpView.swift */; };
@@ -59,6 +62,9 @@
 		21198FB427A3B91800C815E6 /* SASE Tutoring AppUISASE Tutoring Apps.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SASE Tutoring AppUISASE Tutoring Apps.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21198FB827A3B91800C815E6 /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		21198FBA27A3B91800C815E6 /* TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21220DFA2847152400F9F1DC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		21220DFC284715E500F9F1DC /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		21220DFE2847160E00F9F1DC /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
 		2122A61A27A532C400637C12 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		2C13824A281B478000B9F2B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2C533C0E27C83D06009DAB1E /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 				2C13824A281B478000B9F2B5 /* SignUpView.swift */,
 				21166ACC281917FA00410A99 /* Meetings.swift */,
 				21166ACE2819186E00410A99 /* HomeView.swift */,
+				21220DFA2847152400F9F1DC /* ChatView.swift */,
+				21220DFC284715E500F9F1DC /* AppView.swift */,
+				21220DFE2847160E00F9F1DC /* ClassView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -286,11 +295,14 @@
 				2C533C0F27C83D06009DAB1E /* Messages.swift in Sources */,
 				21166ACB2819178500410A99 /* ProfileView.swift in Sources */,
 				21166ACD281917FA00410A99 /* Meetings.swift in Sources */,
+				21220DFB2847152400F9F1DC /* ChatView.swift in Sources */,
 				21166AD1281A2DD000410A99 /* UserInfo.swift in Sources */,
 				21198F9E27A3B91700C815E6 /* TestApp.swift in Sources */,
 				21166ACF2819186E00410A99 /* HomeView.swift in Sources */,
+				21220DFD284715E500F9F1DC /* AppView.swift in Sources */,
 				2C533C1527C88C6B009DAB1E /* DateHelper.swift in Sources */,
 				2C533C1B27C987E4009DAB1E /* MessageView.swift in Sources */,
+				21220DFF2847160E00F9F1DC /* ClassView.swift in Sources */,
 				2122A61B27A532C400637C12 /* PhotoPicker.swift in Sources */,
 				2C533C1127C84196009DAB1E /* ChatsModel.swift in Sources */,
 				2C13824B281B478000B9F2B5 /* SignUpView.swift in Sources */,
