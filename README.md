@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [Project Description](#project-description)
-* [Features + GIFS](#features-+-gifs)
+* [Features](#features)
 * [Technologies](#technologies)
 * [How to run and install](#how-to-run-and-install)
 * [Credits](#credits)
@@ -13,7 +13,7 @@
 ## Project Description
 This project is a tutoring app designed for universities to help schedule and organize meetings between tutors and students for different subjects. It allows them to communicate with each other using a chat feature. The app is also used to store study materials such as notes, videos, and files. 
 
-## Features + GIFs
+## Features
 * Login Page
 The login page is where the user can log in to the app using:
 Email as the username
