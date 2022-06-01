@@ -65,7 +65,6 @@ Class Schedule
 
 
 
-
 ## Technologies:
 * XCode
 * SwiftUI
