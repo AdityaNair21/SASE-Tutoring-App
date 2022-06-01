@@ -102,7 +102,7 @@
 		21198F9127A3B91700C815E6 = {
 			isa = PBXGroup;
 			children = (
-				21198F9C27A3B91700C815E6 /* Test */,
+				21198F9C27A3B91700C815E6 /* Tutoring App */,
 				21198FB727A3B91800C815E6 /* TestUITests */,
 				21198F9B27A3B91700C815E6 /* Products */,
 			);
@@ -118,7 +118,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		21198F9C27A3B91700C815E6 /* Test */ = {
+		21198F9C27A3B91700C815E6 /* Tutoring App */ = {
 			isa = PBXGroup;
 			children = (
 				21198F9D27A3B91700C815E6 /* TestApp.swift */,
@@ -140,7 +140,7 @@
 				21220DFC284715E500F9F1DC /* AppView.swift */,
 				21220DFE2847160E00F9F1DC /* ClassView.swift */,
 			);
-			path = Test;
+			path = "Tutoring App";
 			sourceTree = "<group>";
 		};
 		21198FA327A3B91700C815E6 /* Preview Content */ = {
@@ -466,7 +466,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Test/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tutoring App/Preview Content\"";
 				DEVELOPMENT_TEAM = 43D9RD6AGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -495,7 +495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Test/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tutoring App/Preview Content\"";
 				DEVELOPMENT_TEAM = 43D9RD6AGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
