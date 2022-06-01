@@ -32,11 +32,11 @@ The profile page is where students can get to know other students and tutors.
 
 
 
-Technologies:
+## Technologies:
 XCode
 SwiftUI
 
-How to run and install:
+## How to run and install:
 
 On a PC with macOS, navigate to https://apps.apple.com/us/app/xcode/id497799835?mt=12
 Download this project via git or .zip file
@@ -44,12 +44,12 @@ Open the Folder
 Open the .xcodeproj file
 
 
-Credits:
+## Credits:
 
-Team Lead + Graphic Designer:
-Ethan Kwong
+- Team Lead + Graphic Designer:
+* Ethan Kwong
 
-Software Developers:
-Faith Deanon
-Aditya Nair
+- Software Developers:
+* Faith Deanon
+* Aditya Nair
 
