@@ -66,23 +66,16 @@ Class Schedule
 
 
 
------------------------
-The profile page is where students can get to know other students and tutors.
-
-
-
-
-
 ## Technologies:
-XCode
-SwiftUI
+* XCode
+* SwiftUI
 
 ## How to run and install:
 
-On a PC with macOS, navigate to https://apps.apple.com/us/app/xcode/id497799835?mt=12
-Download this project via git or .zip file
-Open the Folder
-Open the .xcodeproj file
+* On a PC with macOS, navigate to https://apps.apple.com/us/app/xcode/id497799835?mt=12
+* Download this project via git or .zip file
+* Open the Folder
+* Open the .xcodeproj file
 
 
 ## Credits:
@@ -93,3 +86,5 @@ Software Developers:
 * Faith Deanon(@afdeanon)
 * Aditya Nair(@AdityaNair21)
 
+Presentation:
+https://docs.google.com/presentation/d/1fr7XfsSugZl9UKDe-zwGGlOkIdROxHgiBQRQh48JYYs/edit#slide=id.g12686008d62_1_0
