@@ -86,11 +86,10 @@ Open the .xcodeproj file
 
 
 ## Credits:
+Team Lead + Graphic Designer:
+* Ethan Kwong(@IcedRamune)
 
-- Team Lead + Graphic Designer:
-* Ethan Kwong
-
-- Software Developers:
-* Faith Deanon
-* Aditya Nair
+Software Developers:
+* Faith Deanon(@afdeanon)
+* Aditya Nair(@AdityaNair21)
 
