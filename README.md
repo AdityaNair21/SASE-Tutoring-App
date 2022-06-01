@@ -1,11 +1,22 @@
 # SASE-Tutoring-App
 
 
-## Description
+## Description/General Info
 
 Table of Contents
 
 Features + GIFs
+
+
+
+
+
+
+-----------------------
+
+
+
+
 
 Technologies
 
