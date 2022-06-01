@@ -29,9 +29,9 @@ On a PC with macOS, navigate to https://apps.apple.com/us/app/xcode/id497799835?
 Download this project via git or .zip file
 Open the Folder
 Open the .xcodeproj file
-Select an sdk for the Base SDK
 
-Credits
+
+Credits:
 
 Team Lead + Graphic Designer:
 Ethan Kwong
