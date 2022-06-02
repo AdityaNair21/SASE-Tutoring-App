@@ -68,6 +68,8 @@ Information includes:
 * Role (tutor/tutee)
 * Class Schedule
 
+<img width="326" alt="Screen Shot 2022-06-01 at 8 16 30 PM" src="https://user-images.githubusercontent.com/68868188/171545907-21610947-7460-449c-90d4-5e84da8f853d.png">
+
 
 
 
