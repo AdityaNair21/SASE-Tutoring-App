@@ -9,6 +9,7 @@
 * [Technologies](#technologies)
 * [How to run and install](#how-to-run-and-install)
 * [Credits](#credits)
+* [Presentation](#presentation)
 
 ## Project Description
 This project is a tutoring app designed for universities to help schedule and organize meetings between tutors and students for different subjects. It allows them to communicate with each other using a chat feature. The app is also used to store study materials such as notes, videos, and files. 
@@ -85,5 +86,5 @@ Software Developers:
 * Faith Deanon(@afdeanon)
 * Aditya Nair(@AdityaNair21)
 
-Presentation:
+## Presentation:
 https://docs.google.com/presentation/d/1fr7XfsSugZl9UKDe-zwGGlOkIdROxHgiBQRQh48JYYs/edit#slide=id.g12686008d62_1_0
