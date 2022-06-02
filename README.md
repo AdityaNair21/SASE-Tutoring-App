@@ -1,8 +1,6 @@
 # SASE-Tutoring-App
 
 
-## Description/General Info
-
 ## Table of Contents
 * [Project Description](#project-description)
 * [Features](#features)
