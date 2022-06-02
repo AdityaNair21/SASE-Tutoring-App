@@ -33,8 +33,6 @@ To create an account, the user will fill in their information:
 
 ### Home Page
 Home Page (classes enrolled in, upcoming tutor meetings, tutors you follow) \
-Search Bar : three dropdowns (tutors, classes, professors)\
-Recommendations in all three depending on class schedule and ratings of the resources \
 <img width="348" alt="Screen Shot 2022-06-01 at 5 39 16 PM" src="https://user-images.githubusercontent.com/68868188/171523867-a1ce8665-4967-4457-8d9c-5f45c0615913.png">
 
 ### Meeting Scheduling
