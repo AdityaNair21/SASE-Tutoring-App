@@ -60,6 +60,7 @@ The profile page is where students can get to know other students and tutors.
  
 Information includes:
 * Short Bio
+* Profile Picture
 * Contact Info
 * Role (tutor/tutee)
 * Class Schedule
